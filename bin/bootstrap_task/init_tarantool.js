@@ -1,16 +1,12 @@
-'use strict';
 
-const appRoot = require('app-root-path');
-
-const DB = require(`${appRoot}/lib/tarantool`);
+const DB = require('../../lib/tarantool');
 
 module.exports = async () => {
-	console.info('Try to connect to tarantool ...');
+  console.info('Try to connect to tarantool ...');
 
 
-	await DB.init();
-	await DB.testConnection();
+  await DB.init();
+  await DB.testConnection();
 
-	console.info('Database Connected');
+  console.info('Database Connected');
 };
-

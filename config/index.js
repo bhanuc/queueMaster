@@ -1,5 +1,5 @@
-'use strict';
+
 
 module.exports = {
-	api_port: 4000
+  api_port: 4000,
 };
