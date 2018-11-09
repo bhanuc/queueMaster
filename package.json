@@ -23,8 +23,6 @@
     "coverage": "jest --coverage",
     "test": "npm run lint && npm run coverage && jest",
     "jest": "jest",
-    "precommit": "npm run lint",
-    "prepush": "npm test",
     "start": "node bin/server.js"
   },
   "dependencies": {
