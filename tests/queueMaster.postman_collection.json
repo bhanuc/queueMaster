@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "5684316a-9218-4c35-8d49-618e56d1dd0a",
+		"name": "queueMaster",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4000/v1/queues",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "bhanu423@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qwerty123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues"
+					]
+				},
+				"description": "Get info from all queues"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola/task/create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"hola\",\n\"data\": \"hola-hola\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola/task/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola",
+						"task",
+						"create"
+					]
+				},
+				"description": "Add a task in queue"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/create",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"name": "Content-Type",
+						"value": "application/json",
+						"disabled": false
+					},
+					{
+						"key": "Cookie",
+						"value": "connect.sid=s%3AvqUieipXuSgKN9PXwyfv9YJQApXikyco.OfMZ7GlRTKowPuEzSOokwZh3Bba8vhZZDEMrLRF2%2FNk; __utma=111872281.1834637548.1529405113.1529405113.1529405113.1; __utmc=111872281; __utmz=111872281.1529405113.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); io=d1Zte1zA7Ep90wR9AAAx; adonis-session=b6d8c0db48d5b1b90a78c8d343e5beb5hjL2DdaTRi0pRzW5vFYNj%2FJ5%2BsE2qi3dWOBzkbg%2Bxg3sxo13WNdUC7w9lVwYxQvqgZfQCMMgOEDRxUD91AiLDiBoeot9dUgjmEIv56UNunJWkhW441u4icxPn1qAAput; XSRF-TOKEN=e1c55f96d59fae1d4198390351411559zdNAu7PSXdb6mLYqBPNt%2FHY2pbHOv4Yk60NbgseSs17jc9pjmn62AyJmVuffGYnAjf2xPnDJPEFWG9o3JVfvvcyBny7sb%2FlDRKyYpY0MyMWOd2a5wgsnLkyphHsxpc0M; adonis-session-values=9d18087df4237f7191f22614a223dce8oW78wRbJ%2Ba5fyZ%2BBkkdp4rBA7qEGueyZqo2Soz8QgrApXAq1INauVtfs5f35jfLPT5%2ByPi09yCDr%2Fu86uQ%2B85yJFXqDrhKZ4QEcRSd0HhjpegCRSsqTJyQcrugPLtK0xYMt65bwRWz3osrQX8knNrb9ZfZp9wXNqBk3u3vRWeaygGLAi4YvxY1VCd3MBc5Il8gMUvbDDrx3YkTgRs1gB3aTLSrjbmcr0KuK9BVGcNOsMWlBRF7QJmyqaF4iNl%2Bu1",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"Holder-Queue-3\",\n\"queueType\": \"fifo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"create"
+					]
+				},
+				"description": "Create a new Queue"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola"
+					]
+				},
+				"description": "Get info of a single Queue"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola/task/get",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"hola\",\n\"timeout\": \"100\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola/task/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola",
+						"task",
+						"get"
+					]
+				},
+				"description": "Get a task from a Queue"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola/task/update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"hola\",\n\"time\": \"100000\",\n\"taskid\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola/task/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola",
+						"task",
+						"update"
+					]
+				},
+				"description": "Get a task from a Queue"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola/task/update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"hola\",\n\"time\": \"100000\",\n\"taskid\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola/task/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola",
+						"task",
+						"update"
+					]
+				},
+				"description": "Update timeout of a task given ID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4000/v1/queues/hola/task/complete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"queueName\": \"hola\",\n\"taskid\": 0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/queues/hola/task/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"queues",
+						"hola",
+						"task",
+						"complete"
+					]
+				},
+				"description": "Mark a task complete"
+			},
+			"response": []
+		}
+	]
+}
