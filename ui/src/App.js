@@ -21,8 +21,7 @@ function QueuesList(props) {
   const queues = props.queues;
 
   const listItems = Object.keys(queues).map((queueName) =>
-    <ListItem key={queueName}
-              value={queues[queueName]} queueName={queueName}/>
+    <ListItem key={queueName} value={queues[queueName]} queueName={queueName}/>
   );
   return (
     <Table responsive striped bordered condensed hover>
@@ -49,7 +48,7 @@ class App extends Component {
     super(props);
     const that = this;
     that.state = {queues: {}}
-    axios.get('http://localhost:3000/v1/queues')
+    axios.get('http://localhost:4000/v1/queues')
     .then(function (response) {
       const queues = response.data[0];
       that.setState({queues});
